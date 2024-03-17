@@ -1,0 +1,32 @@
+{
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "jest-html-reporter": "^3.10.2"
+  },
+  "scripts": {
+    "start": "./start.sh",
+    "serve": "http-server -p 8100 report/",
+    "test": "jest"
+  },
+  "jest": {
+    "reporters": [
+      "default",
+      [
+        "./node_modules/jest-html-reporter",
+        {
+          "pageTitle": "Test Report: twtask server",
+          "outputPath": "./report/index.html",
+          "includeFailureMsg": true
+        }
+      ]
+    ],
+    "testTimeout": 15000
+  },
+  "name": "twtask-app",
+  "version": "1.0.0",
+  "description": "twtask server and tests",
+  "author": "Rajendra Patil",
+  "dependencies": {
+    "http-server": "^14.1.1"
+  }
+}
