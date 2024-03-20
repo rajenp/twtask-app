@@ -7,12 +7,12 @@ This is the test app with a simple directory structure
 To build an image
 
 ```shell
-docker build --pull --rm -f "Dockerfile" -t twtaskapp:latest "." 
+docker build -t twtaskapp:latest "." 
 ```
 
 To run in a new container
 ```shell
-docker run --workdir=/usr/src/app -p 8100:8100 --restart=no --runtime=runc -d twtaskapp:latest
+docker run -p 8100:8100 -d twtaskapp:latest
 ```
 
 This will start server, run tests and serve the report at localhost:8100
